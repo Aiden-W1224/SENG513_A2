@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Calculator
+    </title>
+    <script>
+      function displayNum(num) {
+        document.getElementById("display").value+=num
+      }
+      function equals() {
+          document.getElementById("display").value = eval(document.getElementById("display").value);
+        }
+      function erase() {
+        var value = document.getElementById("display").value;
+        document.getElementById("display").value = value.substr(0, value.length - 1);
+      
+      }
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <link rel="stylesheet" href="css/style.css">
+  <body>
+    <div class="calculator">  
+      <div class="input" align="center">
+          <input type="text" id="display">
+      </div>
+      <table align="center">
+          <td><input type="button" class="buttonRegular" value="(" onclick="displayNum('(')"></td>
+          <td><input type="button" class="buttonRegular" value=")" onclick="displayNum(')')"></td>
+          <td colspan=2><input type="button" class="buttonSpecial" value="CE" onclick="erase()"></td>
+        </tr>
+        <tr>
+          <td><input type="button" class="buttonRegular" value="7" onclick="displayNum(7)"></td>
+          <td><input type="button" class="buttonRegular" value="8" onclick="displayNum(8)"></td>
+          <td><input type="button" class="buttonRegular" value="9" onclick="displayNum(9)"></td>
+          <td><input type="button" class="buttonRegular" value="/" onclick="displayNum('/')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" class="buttonRegular" value="4" onclick="displayNum(4)"></td>
+          <td><input type="button" class="buttonRegular" value="5" onclick="displayNum(5)"></td>
+          <td><input type="button" class="buttonRegular" value="6" onclick="displayNum(6)"></td>
+          <td><input type="button" class="buttonRegular" value="x" onclick="displayNum('*')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" class="buttonRegular" value="1" onclick="displayNum(1)"></td>
+          <td><input type="button" class="buttonRegular" value="2" onclick="displayNum(2)"></td>
+          <td><input type="button" class="buttonRegular" value="3" onclick="displayNum(3)"></td>
+          <td><input type="button" class="buttonRegular" value="-" onclick="displayNum('-')"></td>
+        </tr>
+        <tr>
+          <td><input type="button" class="buttonRegular" value="0" onclick="displayNum(0)"></td>
+          <td><input type="button" class="buttonRegular" value="." onclick="displayNum('.')"></td>
+          <td><input type="button" class="buttonRegular" value="=" onclick="equals()"></td>
+          <td><input type="button" class="buttonRegular" value="+" onclick="displayNum('+')"></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
